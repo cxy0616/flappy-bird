@@ -1,0 +1,144 @@
+#game {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('../images/sky.png');
+}
+
+.bird {
+  position: absolute;
+  top: 235px;
+  /* ui给定的高度 */
+  left: 50%;
+  /* 相对于父元素宽度的一半 */
+  margin-left: -15px;
+  width: 30px;
+  height: 30px;
+  background-image: url('../images/birds.png');
+}
+
+ .start {
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  margin-left: -100px;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  /* 垂直居中 */
+  text-align: center;
+  /* 水平居中 */
+  font-weight: bolder;
+}
+
+start.start-white {
+  color: #fff;
+  font-size: 24px;
+}
+
+.start.start-blue {
+  color: #09f;
+  font-size: 36px;
+}
+
+.score {
+  position: absolute;
+  left: 50%;
+  /* margin-left: ; */
+  transform: translateX(-50%);
+  /* 相对于元素自身宽度的一半 */
+  font-size: 24px;
+  /* 指的是高度? */
+  color: #fff;
+  font-weight: bolder;
+}
+
+.mask {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  width: 100%;
+  height:100%;
+  background-color: #000;
+  opacity: .7;
+}
+
+.end {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  /* 载不知道自身宽度的情况下使用transform */
+  transform: translateX(-50%);
+  text-align: center;
+  color: red; 
+  /* 不用z-index,因为end和mask都是绝对定位，后面的index更高 */
+}
+
+.end .over {
+  font-size: 35px;
+  font-weight: bolder;
+  color: red;
+}
+
+.end .result,
+.end .final-score {
+  margin-top: 20px;
+  color: #ff0;
+  font-size: 20px;
+  font-weight: bold;
+  /* bold和bolder之间的区别 ？*/
+}
+
+.end .rank-list {
+  margin-top: 20px;
+  color: #09f;
+  text-align: left;
+}
+
+.end .rank-item {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+.end .rank-degree {
+  display: inline-block;
+  /* 因为其是一个span元素 */
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  margin-right: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: #8eb9f5;
+  font-size: 12px;
+}
+
+.end .rank-degree.first {
+  background-color: #f54545;
+}
+
+.end .rank-degree.second {
+  background-color: #ff8547;
+}
+
+.end .rank-degree.third {
+  background-color: #ffac38;
+}
+
+.end .rank-score {
+  display: inline-block;
+  width: 30px;
+  /* 分数无论是两位数还是三位数占的位置一样 */
+}
+
+.end .restart {
+  color: #09f;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+} 
