@@ -61,6 +61,8 @@
   background-color: #000;
   opacity: .7;
   display:none;
+  z-index:2;
+  /* 因为后创建的元素的z-index比较高，结束时柱子在最顶层，所以将mask的z-index设为2，end为3 */
 }
 
 .end {
@@ -71,6 +73,7 @@
   text-align: center;
   /* color: red; */
   display:none;
+  z-index:3;
 }
 
 .end .over {
@@ -135,4 +138,24 @@
   font-size: 18px;
   font-weight: bolder;
   cursor: pointer;
+}
+.pipe{
+  position: absolute;
+  
+  width: 52px;
+  height:150px;
+  background-color: red;
+  z-index:1;
+  
+}
+.pipe.pipe-up{
+  top:0;
+  background-image: url('../images/pipe2.png');
+  /* 因为背景颜色的高度比图片的短，而且背景图片默认是从元素的左上角顶部开始渲染的，看不到柱子的横纹，所以从底部开始渲染，把柱子的横纹渲染出来 */
+  background-position-y:bottom;
+}
+.pipe.pipe-bottom{
+  bottom:0;
+  background-image: url('../images/pipe1.png');
+  
 }
